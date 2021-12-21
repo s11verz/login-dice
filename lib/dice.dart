@@ -66,7 +66,7 @@ class _DiceState extends State<Dice> {
 
 void showToast(String message) {
   Fluttertoast.showToast(
-      msg: message,
+      //msg: message,
       backgroundColor: Colors.white,
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM);
