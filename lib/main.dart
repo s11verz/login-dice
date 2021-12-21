@@ -31,17 +31,57 @@ class _LogInState extends State<LogIn> {
           IconButton(icon: Icon(Icons.search), onPressed: () {})
         ],
       ),
-      body: Column(
-        children: [
-          Padding(padding: EdgeInsets.only(top: 50)),
-          Center(
-            child: Image(
-              image: AssetImage('image/chef.gif'),
-              width: 170.0,
-              height: 190.0,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(padding: EdgeInsets.only(top: 50)),
+            Center(
+              child: Image(
+                image: AssetImage('image/chef.gif'),
+                width: 170.0,
+                height: 190.0,
+              ),
             ),
-          )
-        ],
+            Form(
+                child: Theme(
+              data: ThemeData(
+                  primaryColor: Colors.teal,
+                  inputDecorationTheme: InputDecorationTheme(
+                      labelStyle:
+                          TextStyle(color: Colors.teal, fontSize: 15.0))),
+              child: Container(
+                padding: EdgeInsets.all(70.0),
+                child: Column(
+                  children: [
+                    TextField(
+                        decoration: InputDecoration(labelText: 'Enter ID'),
+                        keyboardType: TextInputType.emailAddress),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Enter Password'),
+                      keyboardType: TextInputType.text,
+                      obscureText: true,
+                    ),
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    ButtonTheme(
+                        minWidth: 100.0,
+                        height: 50.0,
+                        child: RaisedButton(
+                          color: Colors.orangeAccent,
+                          child: Icon(
+                            Icons.arrow_forward,
+                            color: Colors.white,
+                            size: 35.0,
+                          ),
+                          onPressed: () {},
+                        ))
+                  ],
+                ),
+              ),
+            ))
+          ],
+        ),
       ),
     );
   }
